@@ -25,6 +25,8 @@
 
 
 
+
+
 ## 1. 댓글 수 
 
 ### 개선전(11번)
@@ -37,7 +39,7 @@ articles = Article.objects.order_by('-pk')
 <p>댓글 수 : {{ aritcle.comment_set.count }}</p>
 ```
 
-![Screen Shot 2020-05-04 at 오후 3.36](md-images/Screen Shot 2020-05-04 at 오후 3.36-1588574247764.png)
+![Screen Shot 2020-05-04 at 오후 3 36](https://user-images.githubusercontent.com/60080670/94995980-cc17fc00-05dc-11eb-906b-13b6de1a9c1e.png)
 
 ### 개선후(1번)
 
@@ -50,7 +52,11 @@ articles = Article.objects.annotate(comment_set_count=Count('comment')).order_by
 <p>댓글 수 : {{ article.comment_set_count }}</p>
 ```
 
-![Screen Shot 2020-05-04 at 오후 3.37](md-images/Screen Shot 2020-05-04 at 오후 3.37.png)
+![Screen Shot 2020-05-04 at 오후 3 37](https://user-images.githubusercontent.com/60080670/94995989-dd610880-05dc-11eb-8de8-7b96df847967.png)
+
+
+
+
 
 ## 2. `select_related`
 
@@ -70,7 +76,7 @@ articles = Article.objects.order_by('-pk')
 <h3>{{ article.user.username }}</h3>
 ```
 
-![Screen Shot 2020-05-04 at 오후 3.38](md-images/Screen Shot 2020-05-04 at 오후 3.38.png)
+![Screen Shot 2020-05-04 at 오후 3 38](https://user-images.githubusercontent.com/60080670/94996011-f8cc1380-05dc-11eb-8feb-3a3b5a580870.png)
 
 ### 개선후(1번)
 
@@ -83,7 +89,11 @@ articles = Article.objects.select_related('user').order_by('-pk')
 <h3>{{ article.user.username }}</h3>
 ```
 
-![Screen Shot 2020-05-04 at 오후 3.38 - 2](md-images/Screen Shot 2020-05-04 at 오후 3.38 - 2.png)
+![Screen Shot 2020-05-04 at 오후 3 42 - 2](https://user-images.githubusercontent.com/60080670/94996019-06819900-05dd-11eb-88c1-f30aa3e0cb42.png)
+
+
+
+
 
 ## 3. `prefetch_related`
 
@@ -105,7 +115,7 @@ articles = Article.objects.order_by('-pk')
 {% endfor %}
 ```
 
-![Screen Shot 2020-05-04 at 오후 3.42](md-images/Screen Shot 2020-05-04 at 오후 3.42.png)
+![Screen Shot 2020-05-04 at 오후 3 42](https://user-images.githubusercontent.com/60080670/94996035-1c8f5980-05dd-11eb-8ca2-df614c0cde25.png)
 
 ### 개선후(2번)
 
@@ -120,7 +130,11 @@ articles = Article.objects.prefetch_related('comment_set').order_by('-pk')
 {% endfor %}
 ```
 
-![Screen Shot 2020-05-04 at 오후 3.42 - 2](md-images/Screen Shot 2020-05-04 at 오후 3.42 - 2.png)
+![Screen Shot 2020-05-04 at 오후 3 42 - 2](https://user-images.githubusercontent.com/60080670/94996104-7ee85a00-05dd-11eb-94f8-d30c36006730.png)
+
+
+
+
 
 ## 4. 게시글의 댓글마다 사람의 이름과 댓글을 출력
 
@@ -136,7 +150,7 @@ articles = Article.objects.prefetch_related('comment_set').order_by('-pk')
 {% endfor %}
 ```
 
-![Screen Shot 2020-05-04 at 오후 3.48](md-images/Screen Shot 2020-05-04 at 오후 3.48.png)
+![Screen Shot 2020-05-04 at 오후 3 48](https://user-images.githubusercontent.com/60080670/94996088-6bd58a00-05dd-11eb-8fa3-86acfc02ba9b.png)
 
 ### 개선후(2번)
 
@@ -155,7 +169,7 @@ articles = Article.objects.prefetch_related(
 {% endfor %}
 ```
 
-![Screen Shot 2020-05-04 at 오후 3.49](md-images/Screen Shot 2020-05-04 at 오후 3.49.png)
+![Screen Shot 2020-05-04 at 오후 3 49](https://user-images.githubusercontent.com/60080670/94996076-5f513180-05dd-11eb-827f-7f0575e2c9b5.png)
 
 
 
