@@ -457,6 +457,22 @@ $ docker exec 컨테이너_id cat /var/jenkins_home/secrets/initialAdminPassword
 
 
 
+#### 소스코드
+
+![캡처3](https://user-images.githubusercontent.com/60080670/95745035-5b08d080-0ccf-11eb-9917-861dafc67766.PNG)
+
+#### 빌드 API
+
+![캡처4](https://user-images.githubusercontent.com/60080670/95745101-7378eb00-0ccf-11eb-8522-adfee220ce8e.PNG)
+
+#### 빌드 명령어
+
+![캡처2](https://user-images.githubusercontent.com/60080670/95745021-53e1c280-0ccf-11eb-9f7f-b92748fa2989.PNG)
+
+![캡처](https://user-images.githubusercontent.com/60080670/95745079-6bb94680-0ccf-11eb-81b1-9b059c4b8d84.PNG)
+
+
+
 
 
 ## 8. Socket.io & Redis 서버 Docker Compose로 구동
