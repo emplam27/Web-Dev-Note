@@ -76,4 +76,26 @@ HTML 요소들을 조작하는 편리한 JavaScript 라이브러리
   $('#post-url').val("새 글입니다.")
   ```
 
+
+
+#### (2) div 숨기기 / 보이기
+
+- html
+
+  ```html
+  <div class="posting-box" id="post-box">
+      ...
+  </div>
+  ```
+
+- js
+
+  ```js
+  // id 값이 post-box인 곳을 가리키고, hide()로 안보이게 한다.(=css의 display 값을 none으로 바꾼다)
+  $('#post-box').hide();
+  
+  // show()로 보이게 한다.(=css의 display 값을 block으로 바꾼다)
+  $('#post-box').show();
+  ```
+
   
