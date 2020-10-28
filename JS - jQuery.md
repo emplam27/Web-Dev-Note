@@ -44,3 +44,36 @@ HTML 요소들을 조작하는 편리한 JavaScript 라이브러리
 
   CSS와 마찬가지로 jQuery를 쓸 때 특정 요소를 '가리켜야' 조작할 수 있습니다. CSS에서는 선택자로 class를 주로 사용했는데, jQuery에서는 고유한 하나의 요소를 가리키는 id를 주로 사용합니다.
 
+
+
+
+
+
+
+## 자주 쓰이는 jQuery
+
+
+
+#### (1) input 박스의 값 가져오기
+
+- html
+
+   ```html
+   <div class="form-group">
+       <label for="exampleInputEmail1">아티클 URL</label>
+       <input id="post-url" type="email" class="form-control" aria-describedby="emailHelp"
+           placeholder="">
+   </div>
+   ```
+
+- js
+
+  ```js
+  // input의 값 가져오기
+  let url = $('#post-url').val()
+  
+  // input에 값 넣기
+  $('#post-url').val("새 글입니다.")
+  ```
+
+  
