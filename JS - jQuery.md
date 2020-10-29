@@ -98,4 +98,37 @@ HTML 요소들을 조작하는 편리한 JavaScript 라이브러리
   $('#post-box').show();
   ```
 
+
+
+
+#### (3) CSS의 속성 값 가져오기
+
+- js
+
+  ```js
+  // CSS의 display 속성이 변하는 것 확인 가능
+  $('#post-box').hide();
+  $('#post-box').css('display');
   
+  $('#post-box').show();
+  $('#post-box').css('display');
+  ```
+
+
+
+
+
+#### (4) 태그 내 텍스트 입력하기
+
+- html
+    ```jsx
+    <button id="btn-posting-box" type="button" class="btn btn-primary">포스팅박스 열기</button>
+    ```
+
+- js
+
+   ```jsx
+   let btn_text = $('#btn-posting-box').text(); 
+   btn_text         // '포스팅박스 열기'가 출력
+   $('#btn-posting-box').text('포스팅박스 닫기');
+   ```
