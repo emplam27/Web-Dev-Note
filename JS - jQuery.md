@@ -1,4 +1,4 @@
-# jQuery 기본
+# jQuery & Ajax
 
 
 
@@ -132,3 +132,77 @@ HTML 요소들을 조작하는 편리한 JavaScript 라이브러리
    btn_text         // '포스팅박스 열기'가 출력
    $('#btn-posting-box').text('포스팅박스 닫기');
    ```
+
+
+
+#### (5) 태그 내 html 입력하기
+
+- html
+
+  ```html
+  <div id="cards-box" class="card-columns">
+      <div class="card"> ... </div>
+  </div>
+  ```
+
+- js
+
+  ```js
+  let img_url = 'https://cdn.vox-cdn.com/thumbor/Pkmq1nm3skO0-j693JTMd7RL0Zk=/0x0:2012x1341/1200x800/filters:focal(0x0:2012x1341)/cdn.vox-cdn.com/uploads/chorus_image/image/47070706/google2.0.0.jpg';
+  let link_url = 'https://google.com/';
+  let title = '제목 - 구글';
+  let desc = '구글에 대한 설명이 여기에 들어간다.';
+  let comment = '여기는 개인적인 코멘트가 들어간다.';
+  
+  let temp_html = `<div class="card">
+                      <img class="card-img-top"
+                          src="${img_url}"
+                          alt="Card image cap">
+                      <div class="card-body">
+                          <a href="${link_url}" class="card-title">${title}</a>
+                          <p class="card-text">${desc}</p>
+                          <p class="card-text comment">${comment}</p>
+                      </div>
+                  </div>`;
+  $('#cards-box').append(temp_html);
+  ```
+
+
+
+
+
+#### (6) 페이지 로딩이 완료되면 실행하기
+
+- js
+
+  ```html
+  <script>
+  
+  $(document).ready(function(){
+  	alert('페이지가 로딩되었습니다.')
+  });
+  
+  </script>
+  ```
+
+  
+
+
+
+## Ajax
+
+
+
+#### 기본골격
+
+```js
+$.ajax({
+  type: "METHOD",
+  url: "",
+  data: {},
+  success: function(response){
+    console.log(response)
+  }
+})
+```
+
