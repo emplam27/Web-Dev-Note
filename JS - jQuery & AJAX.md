@@ -193,6 +193,14 @@ HTML 요소들을 조작하는 편리한 JavaScript 라이브러리
 
 
 
+#### CDN import
+
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+```
+
+
+
 #### 기본골격
 
 ```js
@@ -202,6 +210,7 @@ $.ajax({
   data: {},
   success: function(response){
     console.log(response)
+    // 로직 구현
   }
 })
 ```
