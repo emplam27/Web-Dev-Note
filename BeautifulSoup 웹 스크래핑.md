@@ -38,8 +38,37 @@ $ pip install beautifulsoup4
 
 
 
+#### 네이버 영화 순위 페이지에서 영화 제목을 스크래핑하기
+
+> 개발자도구 Elements 탭에서 요소를 우클릭한 후 Copy > Copy selector를 해서 CSS선택자를 얻을 수 있음
+
 ```python
 import requests
 from bs4 import BeautifulSoup
+
+# 1. 타겟 URL을 읽어서 HTML를 받아오기
+headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.nhn?sel=pnt&date=20200303',headers=headers)
+
+
+# 2. HTML을 BeautifulSoup이라는 라이브러리를 활용해 검색하기 용이한 상태로 만듦
+# soup이라는 변수에 "파싱 용이해진 html"이 담긴 상태가 됨
+# 이제 코딩을 통해 필요한 부분을 추출하면 됨
+soup = BeautifulSoup(data.text, 'html.parser')
+print(soup)  # HTML을 받아온 것을 확인 가능
+
+
+# 3. 위에서 파악한 구조를 이용하여 우선 select()를 이용해 영화들을 찾기
+# select를 이용해서, tr들을 불러오기
+movies = soup.select('#old_content > table > tbody > tr')
+
+# movies (tr들) 의 반복문을 돌리기
+for movie in movies:
+    # movie 안에 a 가 있으면,
+    # (조건을 만족하는 첫 번째 요소, 없으면 None을 반환한다.)
+    a_tag = movie.select_one('td.title > div > a') 
+    if a_tag is not None:
+        # a의 text를 찍어본다.
+        print (a_tag.text)
 ```
 
