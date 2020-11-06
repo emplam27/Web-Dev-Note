@@ -38,7 +38,7 @@ $ pip install beautifulsoup4
 
 
 
-#### 네이버 영화 순위 페이지에서 영화 제목을 스크래핑하기
+### 네이버 영화 순위 페이지에서 영화 제목을 스크래핑하기
 
 > 개발자도구 Elements 탭에서 요소를 우클릭한 후 Copy > Copy selector를 해서 CSS선택자를 얻을 수 있음
 
@@ -70,5 +70,27 @@ for movie in movies:
     if a_tag is not None:
         # a의 text를 찍어본다.
         print (a_tag.text)
+```
+
+
+
+
+
+### beautifoulsoup 사용법
+
+```python
+# 선택자를 사용하는 방법 (copy selector)
+soup.select('태그명')
+soup.select('.클래스명')
+soup.select('#아이디명')
+
+soup.select('상위태그명 > 하위태그명 > 하위태그명')
+soup.select('상위태그명.클래스명 > 하위태그명.클래스명')
+
+# 태그와 속성값으로 찾는 방법
+soup.select('태그명[속성="값"]')
+
+# 한 개만 가져오고 싶은 경우
+soup.select_one('위와 동일')
 ```
 
