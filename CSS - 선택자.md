@@ -37,7 +37,7 @@ section ul {}  // section의 모든 ul에 스타일을 적용
 <section>
 	<div>
         <ul>
-            선택가능
+            스타일 적용
         </ul>
     </div>
 </section>
@@ -57,7 +57,7 @@ section>ul {}  // section의 바로아래 ul에 스타일 적용
 <section>
 	<div>
         <ul>
-            선택불가능
+            스타일 미적용
         </ul>
     </div>
 </section>
@@ -77,7 +77,7 @@ section~ul {}  // section의 형제요소 중 모든 ul에 스타일 적용
 <section>
 </section>
 <ul>
-    선택가능
+    스타일 적용
 </ul>
 ```
 
@@ -88,7 +88,7 @@ section~ul {}  // section의 형제요소 중 모든 ul에 스타일 적용
 어떤 요소의 **인접한 첫번째 형제요소**만 선택하는 선택자
 
 ```css
-section + ul {}
+section + ul {}  // section의 형제요소 중 첫번째 ul에 스타일 적용
 ```
 
 ```html
@@ -97,13 +97,30 @@ section + ul {}
 <div>
 </div>
 <ul>
-    선택불가능
+    스타일 미적용
 </ul>
 ```
 
 
 
 
+
+## 속성 선택자
+
+
+
+#### `[attribute]`
+
+해당 **속성**을 가지고 있는 요소를 선택하는 선택자
+
+```css
+section[title] {}  // section 태그 중 title 속성을 가지고 있는 요소에 스타일 적용
+```
+
+```html
+<section>스타일 미적용</section>
+<section title='whatever'>스타일 적용</section>
+```
 
 
 
