@@ -124,3 +124,51 @@ section[title] {}  // section 태그 중 title 속성을 가지고 있는 요소
 
 
 
+#### `[attribute="value"]`
+
+해당 **속성값이 value**인 요소를 선택하는 선택자
+
+```css
+section[title='abc'] {}  // section 태그 중 title 속성이 abc인 요소에 스타일 적용
+```
+
+```html
+<section title='abc'>스타일 적용</section>
+<section title='abc def'>스타일 미적용</section>
+```
+
+
+
+#### `[attribute~="value"]`
+
+해당 **속성값이 value를 포함하고 있는** 요소를 선택하는 선택자
+
+```css
+section[title~='abc'] {}  // section 태그 중 title 속성이 abc를 포함하는 요소에 스타일 적용
+```
+
+```html
+<section title~='abc'>스타일 적용</section>
+<section title~='abc def'>스타일 적용</section>
+<section title~='abcdef'>스타일 미적용</section>
+```
+
+
+
+#### `[attribute^="value"]`
+
+해당 **속성값이 value로 시작하는** 요소를 선택하는 선택자, **문자열 기준으로 탐색함**
+
+```css
+section[title^='abc'] {}  // section 태그 중 title 속성이 abc로 시작하는 요소에 스타일 적용
+```
+
+```html
+<section title~='abc'>스타일 적용</section>
+<section title~='abc def'>스타일 적용</section>
+<section title~='abcdef'>스타일 적용</section>
+<section title~='abc-def'>스타일 적용</section>
+```
+
+
+
