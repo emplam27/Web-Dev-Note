@@ -164,10 +164,45 @@ section[title^='abc'] {}  // section 태그 중 title 속성이 abc로 시작하
 ```
 
 ```html
+<section title^='abc'>스타일 적용</section>
+<section title^='abc def'>스타일 적용</section>
+<section title^='abcdef'>스타일 적용</section>
+<section title^='abc-def'>스타일 적용</section>
+```
+
+
+
+#### `[attribute$="value"]`
+
+해당 **속성값이 value로 끝나는** 요소를 선택하는 선택자, **문자열 기준으로 탐색함**
+
+```css
+section[title$='abc'] {}  // section 태그 중 title 속성이 abc로 끝나는 요소에 스타일 적용
+```
+
+```html
+<section title$='abc'>스타일 적용</section>
+<section title$='def abc'>스타일 적용</section>
+<section title$='defabc'>스타일 적용</section>
+<section title$='def-abc'>스타일 적용</section>
+```
+
+
+
+#### `[attribute*="value"]`
+
+해당 **속성값이 value가 포함된** 요소를 선택하는 선택자, **문자열 기준으로 탐색함**
+
+```css
+section[title$='abc'] {}  // section 태그 중 title 속성에 abc가 포함된 요소에 스타일 적용
+```
+
+```html
 <section title~='abc'>스타일 적용</section>
-<section title~='abc def'>스타일 적용</section>
-<section title~='abcdef'>스타일 적용</section>
-<section title~='abc-def'>스타일 적용</section>
+<section title~='def abc ghi'>스타일 적용</section>
+<section title~='defabcghi'>스타일 적용</section>
+<section title~='def-abc-ghi'>스타일 적용</section>
+<section title~='def-abc ghi'>스타일 적용</section>
 ```
 
 
