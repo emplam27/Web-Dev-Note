@@ -89,6 +89,6 @@ from pymongo import MongoClient
 app = Flask(__name__)
 
 client = MongoClient('localhost', 27017)  # mongoDB는 27017 포트로 돌아갑니다.
-db = client.dbsparta  # 'dbsparta'라는 이름의 db를 만들거나 사용합니다.
+db = client.testdb  # 'testdb'라는 이름의 db를 만들거나 사용합니다.
 ```
 
