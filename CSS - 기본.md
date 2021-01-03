@@ -71,7 +71,7 @@
 </body>
 ```
 
->- css에서는 선택자(selector){선언(declaration)}의 형태를 사용
+>- css에서는 **`선택자(selector){선언(declaration)}`**의 형태를 사용
 >  각 선언 뒤에는 `;`을 붙여 구분
 >
 >

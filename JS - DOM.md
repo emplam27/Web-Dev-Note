@@ -1,82 +1,80 @@
+[TOC]
+
+
+
 # JS DOM
 
 
 
-
-
-### JS에서 document & window란
+## 1. JS에서 document & window란
 
 - JS에서 document는 HTML문서를 가르킨다. 각 HTML 태그를 접근하여 속성을 바꿀 때 사용한다.
 - JS에서 window는 페이지가 로드되는  브라우저의 창을 의미한다. event listener를 이용할 때 사용한다.
 
 
 
-### DOM(Document Object Model)
+## 2. DOM(Document Object Model)
 
-HTML의 요소를 가져와 객체로 바꿔줌
-
-
-
-### 대표적인 DOM function 목록
+쉽게 얘기하면 HTML의 요소를 가져와 객체로 바꿔주는 방법. 객체로 바뀐 HTML 요소를 JS를 통해 자유롭게 변형 가능
 
 
 
-#### 1. querySelector('노드'), querySelectorAll('노드')
-
-> 대상 노드를 선택하는 메서드, 주로 body 부분에 특정한 id, class값을 갖는 태그들을 선택할 때 사용
->
-> - `querySelector()` : 제공한 CSS선택자를 만족하는 첫 번째 `Element`객체를 반환, 없다면 `null` 반환
-> - `querySelectorAll()` : 지정한 셀렉터와 하나라도 일치하는 `NodeList`, 없다면 비어있는 `NodeList`
->
-> 
+## 3. 대표적인 DOM function 목록
 
 
 
-#### 2. createElement('태그')
+### (1) querySelector('노드'), querySelectorAll('노드')
 
-> 새로운 노드를 생성, 주로 새로운 태그를 생성할 때 사용
+대상 노드를 선택하는 메서드, 주로 body 부분에 특정한 id, class값을 갖는 태그들을 선택할 때 사용
 
-
-
-#### 3. setAttribute('속성', '속성값')
-
-> 대상 노드의 속성값을 변경할 때 사용
+ - `querySelector()` : 제공한 CSS선택자를 만족하는 첫 번째 `Element`객체를 반환, 없다면 `null` 반환
+ - `querySelectorAll()` : 지정한 셀렉터와 하나라도 일치하는 `NodeList`, 없다면 비어있는 `NodeList`
 
 
 
-#### 4. innerText, innerHTML
+### (2) createElement('태그')
 
-> 대상 노드 안에 텍스트, html을 작성할 때 사용
-
-
-
-#### 5. addEventListener('이벤트', '함수')
-
-> 이벤트가 발생하였을 때, 특정 함수를 실행하게할 때 사용, 함수를 실행할 시 `event`인자를 받게되며,   `event.target`이 event가 실행된 객체이다.
->
-> - `click` : 클릭되었을 때
-> - `mouseover` : 커서가 올라갔을 때
-> - `mouseout` : 커서가 올라가있다가 벗어났을 때
-> - `keypress` : 키보드가 눌렸을 때
-> - `keydown` : 키보드가 눌리고 있을 때
-> - `keyup` : 눌렸던 키보드가 떨어졌을 때
-> - `load` : 로딩이 완료되었을 때
-> - `scroll`  : 스크롤 됐을 때
-> - `change` : `<input>`, `<select>`, `<textarea>` 등에서 변화가 있을 때
+새로운 노드를 생성, 주로 새로운 태그를 생성할 때 사용
 
 
 
+### (3) setAttribute('속성', '속성값')
+
+대상 노드의 속성값을 변경할 때 사용
 
 
-#### 6. append('객체'...), appendChild('객체')
 
-> 자식노드로 설정할 때 사용
+### (4) innerText, innerHTML
+
+대상 노드 안에 텍스트, html을 작성할 때 사용
+
+
+
+### (5) addEventListener('이벤트', '함수')
+
+이벤트가 발생하였을 때, 특정 함수를 실행하게할 때 사용, 함수를 실행할 시 `event`인자를 받게되며,   `event.target`이 event가 실행된 객체이다.
+
+ - `click` : 클릭되었을 때
+ - `mouseover` : 커서가 올라갔을 때
+ - `mouseout` : 커서가 올라가있다가 벗어났을 때
+ - `keypress` : 키보드가 눌렸을 때
+ - `keydown` : 키보드가 눌리고 있을 때
+ - `keyup` : 눌렸던 키보드가 떨어졌을 때
+ - `load` : 로딩이 완료되었을 때
+ - `scroll`  : 스크롤 됐을 때
+ - `change` : `<input>`, `<select>`, `<textarea>` 등에서 변화가 있을 때
+
+
+
+### (6) append('객체'...), appendChild('객체')
+
+자식노드로 설정할 때 사용
 
 
 
 
 
-### ex) 시계만들기
+## ex) 시계만들기
 
 ```html
 <body>
@@ -113,7 +111,7 @@ HTML의 요소를 가져와 객체로 바꿔줌
 
 
 
-### ex) greeting form 만들기
+## ex) greeting form 만들기
 
 ```html
 <body>
@@ -161,7 +159,7 @@ HTML의 요소를 가져와 객체로 바꿔줌
 
 
 
-### ex) Todo List 만들기
+## ex) Todo List 만들기
 
 ```html
 <body>

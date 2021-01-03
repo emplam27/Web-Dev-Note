@@ -59,7 +59,9 @@ world` // ``사용시에는 백슬래시 필요 없음
 const hello = '안녕 \n하세요'
 ```
 
-#### (3) Template literal
+
+
+#### (2-1)  Template literal
 
 ES6+ 이후부터 지원하는 문법, 단 escape sequence를 사용할 수 없다.
 
@@ -70,7 +72,7 @@ const message = '안녕하세요'
 
 
 
-#### (4) Boolean
+#### (3) Boolean
 
 참과 거짓을 표현
 
@@ -81,7 +83,7 @@ false
 
 
 
-#### Empty Value
+#### (4) Empty Value
 
 () 값이 없음을 표현하는 값, `null` 과 `undefined` 가 있다. **둘의 타입이 다름에 주의** 
 
@@ -721,7 +723,7 @@ const person = {
 
 
 
-## JSON(Javascript Object Notation - JS객체 표기법)
+## JSON(JavaScript Object Notation - JS객체 표기법)
 
 
 
@@ -776,7 +778,7 @@ function add(a, b) {
 >   단! 아래의 2가지 경우만 제외하고.
 >   1. method 정의 블록 안의 this -> 해당 method 가 정의된 객체(object)
 >      (method 정의할때는 arrow function 을 쓰지 않는다.)
->   2. 생성자 함수 안의 this (지금은 pass)
+>   2. 생성자 함수 안의 this 
 >
 > - 콜백함수의 경우에는 다르다.
 >   - Callback 함수로서 function 키워드로 선언한 함수의 this는 window를 가르킨다. 
@@ -792,7 +794,7 @@ const obj = {
     objInObj: {
         name: 'object in object',
         // oioMethod: function () {} -> 아래와 완전히 같음
-        oioMethod () {  // ES6 문법설탕(코드를 짧고 쉽게)
+        oioMethod () {  // ES6 synthatic sugar(코드를 짧고 쉽게)
             console.log(this) // objInObj
         }
     },
@@ -829,11 +831,7 @@ obj.method2()  //
 
 ### :star::star::star:비구조화:star::star::star:
 
-
-
 object로 들어오는 data 중 일부의 속성만 사용하고 싶을 때 활용
-
-
 
 ```js
 context = {
