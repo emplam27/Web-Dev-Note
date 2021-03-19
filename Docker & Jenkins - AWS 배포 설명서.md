@@ -529,7 +529,7 @@ networks:
 
 
 
-### Socker.io 서버를 위한 nginx 설정
+### Socket.io 서버를 위한 NGINX 설정
 
 ```nginx
 server {
