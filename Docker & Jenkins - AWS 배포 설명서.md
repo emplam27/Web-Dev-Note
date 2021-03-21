@@ -441,7 +441,7 @@ $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 $ docker pull jenkins/jenkins
 
 ========== # jenkins 컨테이너 실행하기 ==========
-# -p: 서버의 9000번 포트와 컨테이너의 808포트 연결 실행
+# -p: 서버의 9000번 포트와 컨테이너의 8080포트 연결 실행
 # -v: 서버의 경로:컨테이너 경로 연결
 $ docker run -d -p 9000:8080 -v /jenkins:/var/jenkins_home --name jenkins -u root jenkins/jenkins
 
