@@ -273,8 +273,8 @@ server {
         proxy_set_header X-Real-IP $remote_addr;     
     }
 
-    ssl_certificate /etc/letsencrypt/live/j3b103.p.ssafy.io/fullchain.pem; 
-    ssl_certificate_key /etc/letsencrypt/live/j3b103.p.ssafy.io/privkey.pem; 
+    ssl_certificate /etc/letsencrypt/live/도메인/fullchain.pem; 
+    ssl_certificate_key /etc/letsencrypt/live/도메인/privkey.pem; 
     include /etc/letsencrypt/options-ssl-nginx.conf; 
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; 
 
@@ -507,7 +507,7 @@ services:
     build: 
       context: .
       args:
-        VUE_APP_SOCKET_HOST: https://j3b103.p.ssafy.io
+        VUE_APP_SOCKET_HOST: https://도메인
         VUE_APP_SOCKET_PORT: 443 
     ports: 
       - 3000:3000
@@ -536,7 +536,7 @@ server {
         listen 443 ssl;
         listen [::]:443 ssl ipv6only=on;
 
-        server_name j3b103.p.ssafy.io;
+        server_name 도메인 이름;
 
         root /home/ubuntu/frontend/dist;
         index index.html index.htm index.nignx-debian.html;
@@ -588,15 +588,15 @@ server {
         }
 
 
-        ssl_certificate /etc/letsencrypt/live/j3b103.p.ssafy.io/fullchain.pem; 
-        ssl_certificate_key /etc/letsencrypt/live/j3b103.p.ssafy.io/privkey.pem; 
+        ssl_certificate /etc/letsencrypt/live/도메인/fullchain.pem; 
+        ssl_certificate_key /etc/letsencrypt/live/도메인/privkey.pem; 
         include /etc/letsencrypt/options-ssl-nginx.conf; 
         ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 }
 
 server {
 
-        if ($host = j3b103.p.ssafy.io) {
+        if ($host = 도메인) {
                 return 301 https://$host$request_uri;
         }
 
@@ -604,7 +604,7 @@ server {
         listen 80;
         listen [::]:80;
 
-        server_name j3b103.p.ssafy.io;
+        server_name 도메인;
 
         return 404;
 
