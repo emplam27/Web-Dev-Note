@@ -1,7 +1,7 @@
 function a() {}
 const proxyObject = new Proxy(a, {
   apply: (target, thisArg, argumentsList) => {
-    console.log('construct method 실행');
+    console.log('apply method 실행');
     console.log(target);
     console.log(thisArg);
     console.log(argumentsList);
@@ -9,7 +9,7 @@ const proxyObject = new Proxy(a, {
   },
 });
 
-// construct method 실행
+// apply method 실행
 // [Function: a]
 // undefined
 // [ 1, 2, 3, 4, 5 ]
